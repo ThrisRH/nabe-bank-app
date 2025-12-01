@@ -81,7 +81,7 @@ const AppTypography appTypographyLight = AppTypography(
   body1: TextStyle(
     fontSize: 16,
     color: AppColors.black,
-    fontWeight: FontWeight.w500,
+    fontWeight: FontWeight.w600,
     height: 24 / 16,
   ),
   body2: TextStyle(fontSize: 16, color: AppColors.black, height: 24 / 16),

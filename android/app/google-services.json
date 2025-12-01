@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "117910750122",
+    "project_id": "nabe-bank",
+    "storage_bucket": "nabe-bank.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:117910750122:android:3833aee3ae26037fa361d3",
+        "android_client_info": {
+          "package_name": "com.android.application"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA2Q9O7nSquZhdNQyfMX3PM4szZfUYfKvs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:117910750122:android:49753f90c6b13bd8a361d3",
+        "android_client_info": {
+          "package_name": "com.example.nabe_bank_application"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA2Q9O7nSquZhdNQyfMX3PM4szZfUYfKvs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

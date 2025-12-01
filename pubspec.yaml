@@ -16,6 +16,9 @@ dependencies:
   dio: ^5.9.0
   nfc_manager: ^4.0.2
   flutter_svg: ^2.2.2
+  intl: ^0.20.2
+  firebase_messaging: ^16.0.4
+  firebase_core: ^4.2.1
 
 dev_dependencies:
   flutter_test:
