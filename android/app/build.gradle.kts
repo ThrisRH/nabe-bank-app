@@ -13,6 +13,7 @@ dependencies {
   // TODO: Add the dependencies for Firebase products you want to use
   // When using the BoM, don't specify versions in Firebase dependencies
 //   implementation("com.google.firebase:firebase-analytics")
+    implementation("androidx.core:core-splashscreen:1.0.1")
 
 
   // Add the dependencies for any other desired Firebase products
@@ -21,7 +22,7 @@ dependencies {
 
 android {
     namespace = "com.example.nabe_bank_application"
-    compileSdk = flutter.compileSdkVersion
+    compileSdk = 36
     ndkVersion = "27.0.12077973"
 
     compileOptions {
@@ -38,7 +39,7 @@ android {
         applicationId = "com.example.nabe_bank_application"
         // You can update the following values to match your application needs.
         // For more information, see: https://flutter.dev/to/review-gradle-config.
-        minSdk = 23
+        minSdk = flutter.minSdkVersion
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode
         versionName = flutter.versionName

@@ -1,8 +1,8 @@
 import 'package:get/get.dart';
 import 'package:nabe_bank_application/screens/home/index.dart';
-import 'package:nabe_bank_application/screens/transfer/transfer_info_step.dart';
-import 'package:nabe_bank_application/screens/transfer/transfer_overview_step.dart';
-import 'package:nabe_bank_application/screens/transfer/tranfer_result_step.dart';
+import 'package:nabe_bank_application/screens/transfer/steps/step_1.dart';
+import 'package:nabe_bank_application/screens/transfer/steps/step_2.dart';
+import 'package:nabe_bank_application/screens/transfer/steps/step_3.dart';
 
 class AppRoutes {
   static final pages = [

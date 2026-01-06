@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_instance/get_instance.dart';
-import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:get/state_manager.dart';
 import 'package:nabe_bank_application/build_context_extensions.dart';
 import 'package:nabe_bank_application/core/theme/colors.dart';
@@ -27,8 +26,16 @@ class ScrollAppBarController extends GetxController {
 
 class SubScreenLayout extends StatelessWidget {
   final Widget child;
+  final Widget action;
   final String title;
-  SubScreenLayout({super.key, required this.child, required this.title});
+  final VoidCallback onBack;
+  SubScreenLayout({
+    super.key,
+    required this.child,
+    required this.title,
+    required this.onBack,
+    required this.action,
+  });
 
   final ScrollAppBarController scrollController =
       Get.find<ScrollAppBarController>();
@@ -60,7 +67,23 @@ class SubScreenLayout extends StatelessWidget {
                 ],
               ),
             ),
-            child: child,
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(
+                24,
+                kToolbarHeight + 48,
+                24,
+                24,
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                spacing: 24,
+                children: [
+                  SizedBox.shrink(),
+                  Expanded(child: SingleChildScrollView(child: child)),
+                  action,
+                ],
+              ),
+            ),
           ),
 
           // TitleBar
@@ -76,7 +99,7 @@ class SubScreenLayout extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 24),
                     child: GestureDetector(
-                      onTap: () => Get.back(),
+                      onTap: () => onBack(),
                       child: Icon(
                         Icons.arrow_back_ios,
                         color: AppColors.darkBlue,

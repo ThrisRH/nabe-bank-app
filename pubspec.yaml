@@ -16,6 +16,7 @@ dependencies:
   nfc_manager: ^4.0.2
   flutter_svg: ^2.2.2
   intl: ^0.20.2
+  local_auth: ^3.0.0
 
 dev_dependencies:
   flutter_test:
@@ -29,6 +30,7 @@ flutter:
     - lib/assets/fonts/
     - lib/assets/svg/
     - lib/assets/svg/navigation/
+    - lib/assets/svg/status/
   fonts:
     - family: Inter
       fonts:

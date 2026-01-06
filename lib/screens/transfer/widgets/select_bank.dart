@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:nabe_bank_application/build_context_extensions.dart';
+import 'package:nabe_bank_application/core/models/bank_model.dart';
 import 'package:nabe_bank_application/core/theme/colors.dart';
 import 'package:nabe_bank_application/core/widgets/common/input/icon_input.dart';
 
 class SelectBankPopup extends StatelessWidget {
-  const SelectBankPopup({super.key});
+  final List<BankModel> data;
+  const SelectBankPopup({super.key, required this.data});
 
   @override
   Widget build(BuildContext context) {
@@ -76,47 +78,18 @@ class SelectBankPopup extends StatelessWidget {
           ),
 
           Expanded(
-            child: SingleChildScrollView(
-              physics: BouncingScrollPhysics(),
-              child: Column(
-                children: [
-                  _BankItem(
-                    bankSlugName: "MBBank",
-                    bankFullName: "Ngân hàng Quân đội",
-                    logoUrl: "abs",
-                  ),
-                  _BankItem(
-                    bankSlugName: "MBBank",
-                    bankFullName: "Ngân hàng Quân đội",
-                    logoUrl: "abs",
-                  ),
-                  _BankItem(
-                    bankSlugName: "MBBank",
-                    bankFullName: "Ngân hàng Quân đội",
-                    logoUrl: "abs",
-                  ),
-                  _BankItem(
-                    bankSlugName: "MBBank",
-                    bankFullName: "Ngân hàng Quân đội",
-                    logoUrl: "abs",
-                  ),
-                  _BankItem(
-                    bankSlugName: "MBBank",
-                    bankFullName: "Ngân hàng Quân đội",
-                    logoUrl: "abs",
-                  ),
-                  _BankItem(
-                    bankSlugName: "MBBank",
-                    bankFullName: "Ngân hàng Quân đội",
-                    logoUrl: "abs",
-                  ),
-                  _BankItem(
-                    bankSlugName: "MBBank",
-                    bankFullName: "Ngân hàng Quân đội",
-                    logoUrl: "abs",
-                  ),
-                ],
-              ),
+            child: ListView.builder(
+              itemCount: data.length,
+              itemBuilder: (context, index) {
+                final bank = data[index];
+                print(bank);
+
+                return _BankItem(
+                  bankSlugName: bank.shortName,
+                  bankFullName: bank.name,
+                  logoUrl: bank.logo,
+                );
+              },
             ),
           ),
         ],
@@ -139,7 +112,7 @@ class _BankItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Get.back(result: bankSlugName);
+        Get.back(result: bankFullName);
       },
       child: Container(
         padding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
@@ -155,13 +128,9 @@ class _BankItem extends StatelessWidget {
             Row(
               spacing: 12,
               children: [
-                Image.asset(
-                  "lib/assets/images/bank-logo.png",
-                  width: 24,
-                  height: 24,
-                ),
+                Image.network(logoUrl, width: 24, height: 24),
                 Text(
-                  "MBBank",
+                  bankSlugName,
                   style: context.typography.body1.copyWith(
                     color: AppColors.primary,
                   ),
@@ -170,7 +139,7 @@ class _BankItem extends StatelessWidget {
             ),
 
             Text(
-              "Ngân hàng Quân đội",
+              bankFullName,
               style: context.typography.body4.copyWith(
                 color: AppColors.placeHolder,
               ),

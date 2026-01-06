@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="LaunchTheme" parent="Theme.SplashScreen">
+
+        <!-- Nền -->
+        <item name="windowSplashScreenBackground">@color/splash_background</item>
+
+        <!-- Icon chính -->
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_splash</item>
+
+        <!-- Không nền tròn -->
+        <item name="windowSplashScreenIconBackgroundColor">
+            @android:color/transparent
+        </item>
+
+        <!-- BRANDING (footer) -->
+       <item name="android:windowSplashScreenBrandingImage">@drawable/ic_branding</item>
+
+        <!-- Theme sau splash -->
+        <item name="postSplashScreenTheme">@style/NormalTheme</item>
+
+    </style>
+</resources>
